@@ -1,8 +1,11 @@
-using BuberDinner.Application.Services.Authentication;
+
+using BuberDinner.Application;
+using BuberDinner.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
-{
-    builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+{    
+    builder.Services.AddApplication();    
+    builder.Services.AddInfrastructure();
     builder.Services.AddControllers();
 
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
